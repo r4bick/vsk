@@ -1,0 +1,15 @@
+{
+    "name": "r4bick/vsk",
+    "description": "Test vsk task",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "vlucas/phpdotenv": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app",
+            "core\\": "core"
+        }
+    }
+}

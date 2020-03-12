@@ -1,0 +1,8 @@
+# composer vendor
+vendor
+
+#environment variables Dotenv
+.env
+
+# phpStorm files
+.idea
