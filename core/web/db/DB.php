@@ -11,8 +11,9 @@ class DB
     private static function connect($config)
     {
         $dsn = $config['dsn'];
-
-        return new PDO($dsn, $username = $config['username'], $password = $config['password']);
+        $pdo =new PDO($dsn, $username = $config['username'], $password = $config['password']);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $pdo;
     }
 
     /**
@@ -24,6 +25,7 @@ class DB
         if(empty($config))
             $config = Config::db();
 
-        return new QueryBuilder(self::connect($config));
+        $executor = new Executor(self::connect($config));
+        return new QueryBuilder($executor);
     }
 }

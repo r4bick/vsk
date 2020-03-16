@@ -8,12 +8,21 @@ use stdClass;
 class QueryBuilder
 {
     private $query;
-    private $pdo;
+    private $executor;
 
-    public function __construct($pdo)
+    /**
+     * QueryBuilder constructor.
+     * @param Executor $executor
+     */
+    public function __construct($executor)
     {
-        $this->pdo = $pdo;
+        $this->executor = $executor;
         $this->query = new stdClass();
     }
 
+    public function command($query)
+    {
+        $this->executor->setQuery($query);
+        return $this->executor;
+    }
 }

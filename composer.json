@@ -5,12 +5,14 @@
     "license": "MIT",
     "require": {
         "vlucas/phpdotenv": "^4.1",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "phpoffice/phpspreadsheet": "^1.11"
     },
     "autoload": {
         "psr-4": {
             "app\\": "app",
-            "core\\": "core"
+            "core\\": "core",
+            "migration\\": "migration"
         }
     }
 }
